@@ -11,13 +11,13 @@
 
     <testsuites>
         <testsuite name="unit test">
-            <directory suffix=".php">test/unit</directory>
+            <directory>test/unit</directory>
         </testsuite>
         <testsuite name="integration test">
-            <directory suffix=".php">test/integration</directory>
+            <directory>test/integration</directory>
         </testsuite>
     </testsuites>
-    <source restrictNotices="true">
+    <source restrictNotices="true" ignoreIndirectDeprecations="true">
         <include>
             <directory suffix=".php">src</directory>
         </include>
