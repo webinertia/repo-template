@@ -11,6 +11,17 @@
 /vendor/
 /.vscode
 /mago-results.txt
-/.specify/
-/specs/
 *:Zone.Identifier
+
+# Spec Kit infrastructure is tracked deliberately in this template: `.specify/`
+# and `.github/skills/` are what seed the workflow in a derived repository, and
+# they exist for the life of the project.
+#
+# Ignored instead are the artifacts that exist only while a repository is being
+# onboarded or that belong to the machine rather than the project. The alignment
+# run's spec.md, plan.md and tasks.md are working notes: they complete their
+# purpose when alignment lands and are not carried forward.
+/.specify/presets/
+/.specify/extensions/.cache/
+__pycache__/
+*.pyc
