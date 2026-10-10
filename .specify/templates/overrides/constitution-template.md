@@ -137,40 +137,6 @@ the rule and its rationale cannot drift apart.
   profiler and the Sql DDL types to render its panels and persists nothing of its own. Only the
   three namespaces that touch PhpDb are admitted: `Debug\`, `PhpDb\` and `Http\`.
 
-## Technology Stack
-
-Every package is built on the same stack, so a plan inherits its Technical Context instead of
-re-deriving it. The facts below are the environment; `plan.md` records the package-specific choices
-made inside it.
-
-| Aspect | Contract |
-|---|---|
-| Language | PHP `~8.4.1 \|\| ~8.5.0`; `config.platform.php` pinned to `8.4.99` for dependency resolution |
-| Project type | A Composer library package that registers itself through `ConfigProvider` |
-| Dependency manager | Composer, `sort-packages`, HTTPS GitHub protocol, `minimum-stability: dev` with `prefer-stable` |
-| Components | laminas and mezzio packages. The package entry point is declared in `extra.laminas.config-provider` |
-| Persistence | `php-db/phpdb` where a database is needed, MySQL 9.7 in CI and in the opt-in compose service. Natural PHP types only across package boundaries |
-| Static analysis and formatting | Mago `format`, `lint`, `analyze`, `guard`. The version comes from the central pin, never a local one |
-| Testing | PHPUnit 13 strict mode with two suites: `unit test` over `test/unit`, `integration test` over `test/integration` |
-| Mutation testing | Infection with Mago as the static analysis tool; `min_msi` and `min_covered_msi` are both 95 |
-| Performance and API compatibility | PHPBench and `roave/backward-compatibility-check`, both development-only |
-| Dev environment | The containerized toolchain from `compose.yml`; the host needs no PHP install |
-
-**PSR-4 roots are fixed.** A derived package renames the `Skeleton` segment and nothing else:
-
-| Root | Path |
-|---|---|
-| `Webware\<Package>\` | `src/` |
-| `WebwareTest\<Package>\` | `test/unit/` |
-| `WebwareTestIntegration\<Package>\` | `test/integration/` |
-
-**The files are authoritative, not this section.** `composer.json` declares the versions and the
-PSR-4 roots; `phpunit.xml.dist`, `mago.toml` and `webware-ci.json` each declare their own contract.
-Where this section and a file disagree, the file wins and this section is corrected.
-
-**Architecture is enforced, not advisory.** A plan is never the place to propose weakening a guard
-rule that already applies. See Principle VIII and the Governance section.
-
 ## Quality Gates
 
 Every pull request passes, on all CI matrix legs:
