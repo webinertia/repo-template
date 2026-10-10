@@ -33,6 +33,8 @@ config:
 | `phpunit.xml.dist` | PHPUnit 13 strict mode: `requireCoverageMetadata`, `failOnNotice`, `failOnWarning`, `failOnDeprecation`. |
 | `compose.yml` / `Dockerfile` / `.devcontainer/` | The containerized toolchain (Composer, PHPUnit, Mago, Infection, PHPBench, roave BC-check). |
 | `src/ConfigProvider.php` | The package wiring entry point, declared under `extra.laminas.config-provider`. |
+| `.specify/` / `.github/skills/` | Spec Kit project files and the Copilot agent skills, on PowerShell scripts. |
+| `.specify/templates/overrides/` | The Webware standard documents that every package shares. Currently the constitution. Resolves above the upstream templates and is not managed by `specify`, so upgrades cannot overwrite it. |
 
 `mago.toml`, `phpunit.xml.dist`, `.gitattributes`, `codecov.yml`, `Dockerfile`,
 `.dockerignore`, `infection.json5.dist`, `phpbench.json.dist` and devcontainer config are
@@ -55,6 +57,7 @@ Work the list top to bottom; the namespace rename is the one that bites, because
 - [ ] `LICENSE` - copyright holder and year
 - [ ] `webware-ci.json` - `min_msi` / `min_covered_msi` (see below), and uncomment the `db_*` keys for a package whose tests need a database
 - [ ] Default branch - a new repo starts on an `N.N.x` branch (this one is `1.0.x`)
+- [ ] `.specify/memory/constitution.md` - run `/speckit-constitution` to ratify the Webware standard for the new package. The standard itself is `.specify/templates/overrides/constitution-template.md`; the command fills `[PROJECT_NAME]` and writes the ratified copy to memory.
 
 The full badge block sits at the top of this file, fenced. Un-fence it and replace the
 `OWNER/PACKAGE`, `ORG/REPO` and `DEFAULT_BRANCH` placeholders there rather than adding a
