@@ -12,7 +12,7 @@ starts aligned instead of being retrofitted.
 [![PHP Version](https://img.shields.io/packagist/php-v/OWNER/PACKAGE)](https://packagist.org/packages/OWNER/PACKAGE)
 [![Latest Version](https://img.shields.io/packagist/v/OWNER/PACKAGE)](https://packagist.org/packages/OWNER/PACKAGE)
 [![License](https://img.shields.io/github/license/ORG/REPO)](LICENSE)
-[![Required CI](https://github.com/ORG/REPO/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml/badge.svg)](https://github.com/ORG/REPO/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml)
+[![Continuous Integration](https://github.com/ORG/REPO/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml/badge.svg)](https://github.com/ORG/REPO/actions/workflows/required/webinertia/.github/.github/workflows/continuous-integration.yml)
 [![codecov](https://codecov.io/gh/ORG/REPO/graph/badge.svg)](https://codecov.io/gh/ORG/REPO)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FORG%2FREPO%2FDEFAULT_BRANCH)](https://dashboard.stryker-mutator.io/reports/github.com/ORG/REPO/DEFAULT_BRANCH)
 ```
