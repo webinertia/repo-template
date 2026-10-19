@@ -36,7 +36,7 @@ config:
 | `.specify/` / `.github/skills/` | Spec Kit project files and the Copilot agent skills, on PowerShell scripts. |
 | `.specify/templates/overrides/` | The Webware standard documents that every package shares. Currently the constitution. Resolves above the upstream templates and is not managed by `specify`, so upgrades cannot overwrite it. |
 
-`mago.toml`, `phpunit.xml.dist`, `.gitattributes`, `codecov.yml`, `Dockerfile`,
+`mago.toml`, `phpunit.xml.dist`, `.gitattributes`, `.gitignore`, `codecov.yml`, `Dockerfile`,
 `.dockerignore`, `infection.json5.dist`, `phpbench.json.dist` and devcontainer config are
 byte-identical to the canonical artifacts in
 `webware-tools/presets/webware-alignment/artifacts/` - copy updates from there rather than
