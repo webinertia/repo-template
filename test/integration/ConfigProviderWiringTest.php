@@ -45,7 +45,7 @@ final class ConfigProviderWiringTest extends TestCase
         /** @var array{extra: array{laminas: array{'config-provider': string}}} $composer */
         $composer = json_decode($json, associative: true, flags: JSON_THROW_ON_ERROR);
 
-        self::assertSame(
+        static::assertSame(
             ConfigProvider::class,
             $composer['extra']['laminas']['config-provider'],
         );

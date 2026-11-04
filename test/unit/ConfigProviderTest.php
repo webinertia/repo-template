@@ -22,6 +22,7 @@ use Webware\Skeleton\ConfigProvider;
 
 #[CoversClass(ConfigProvider::class)]
 #[CoversMethod(ConfigProvider::class, '__invoke')]
+#[CoversMethod(ConfigProvider::class, 'getDependencies')]
 final class ConfigProviderTest extends TestCase
 {
     #[Test]
@@ -33,6 +34,17 @@ final class ConfigProviderTest extends TestCase
             ],
         ];
 
-        self::assertSame($expected, new ConfigProvider()->__invoke());
+        static::assertSame($expected, new ConfigProvider()->__invoke());
+    }
+
+    #[Test]
+    public function returnsTheDependencyFactoryMap(): void
+    {
+        static::assertSame(
+            [
+                'factories' => [],
+            ],
+            new ConfigProvider()->getDependencies(),
+        );
     }
 }
